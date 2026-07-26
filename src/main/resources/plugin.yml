@@ -1,6 +1,6 @@
 name: AkitosLobby
-version: 21.2.1
-main: com.akito_sekuna.lobby.Main
+version: 21.2.2
+main: com.akito_sekuna.akitoslobby.Main
 api-version: '1.21'
 depend: [AkitosCore]
 softdepend: [Headsmith]
