@@ -1,3 +1,18 @@
 # AkitosLobby Configuration
-# Specify the name of your lobby world
 lobby-world: "world"
+
+treasure-head:
+  cooldown-days: 30
+  rarities:
+    normal:
+      min-reward: 5
+      max-reward: 8
+      headsmith-name: "mini copper block"
+    big:
+      min-reward: 8
+      max-reward: 15
+      headsmith-name: "mini gold block"
+    mega:
+      min-reward: 15
+      max-reward: 20
+      headsmith-name: "mini emerald block"

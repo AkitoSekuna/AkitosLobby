@@ -6,7 +6,7 @@
 
     <groupId>com.akito_sekuna</groupId>
     <artifactId>AkitosLobby</artifactId>
-    <version>21.2.0</version>
+    <version>21.2.1</version>
     <packaging>jar</packaging>
 
     <name>AkitosLobby</name>
