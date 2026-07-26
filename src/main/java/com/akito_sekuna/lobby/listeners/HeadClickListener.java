@@ -1,7 +1,7 @@
-package com.akito_sekuna.akitoslobby.listeners;
+package com.akito_sekuna.lobby.listeners;
 
-import com.akito_sekuna.akitoslobby.Main;
-import com.akito_sekuna.akitoslobby.managers.TreasureManager;
+import com.akito_sekuna.lobby.Main;
+import com.akito_sekuna.lobby.managers.TreasureManager;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Skull;

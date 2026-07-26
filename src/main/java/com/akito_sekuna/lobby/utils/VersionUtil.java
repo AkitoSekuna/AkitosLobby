@@ -1,4 +1,4 @@
-package com.akito_sekuna.akitoslobby.utils;
+package com.akito_sekuna.lobby.utils;
 
 public final class VersionUtil {
 

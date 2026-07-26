@@ -1,6 +1,6 @@
-package com.akito_sekuna.akitoslobby.managers;
+package com.akito_sekuna.lobby.managers;
 
-import com.akito_sekuna.akitoslobby.Main;
+import com.akito_sekuna.lobby.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

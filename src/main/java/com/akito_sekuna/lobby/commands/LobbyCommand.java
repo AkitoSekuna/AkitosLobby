@@ -1,6 +1,6 @@
-package com.akito_sekuna.akitoslobby.commands;
+package com.akito_sekuna.lobby.commands;
 
-import com.akito_sekuna.akitoslobby.Main;
+import com.akito_sekuna.lobby.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

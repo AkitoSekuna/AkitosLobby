@@ -1,7 +1,7 @@
-package com.akito_sekuna.akitoslobby.commands;
+package com.akito_sekuna.lobby.commands;
 
-import com.akito_sekuna.akitoslobby.Main;
-import com.akito_sekuna.akitoslobby.managers.TreasureManager;
+import com.akito_sekuna.lobby.Main;
+import com.akito_sekuna.lobby.managers.TreasureManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
