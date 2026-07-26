@@ -1,0 +1,3 @@
+# AkitosLobby Configuration
+# Specify the name of your lobby world
+lobby-world: "world"

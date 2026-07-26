@@ -1,0 +1,13 @@
+name: AkitosLobby
+version: 21.2.0
+main: com.akito_sekuna.lobby.Main
+api-version: '1.21'
+depend: [AkitosCore]
+author: akito_sekuna
+description: Lobby teleportation addon for AkitosCore.
+commands:
+  lobby:
+    description: Teleport to the main lobby spawn.
+    permission: akitoslobby.use
+    permission-message: "<red>You do not have permission to use this command."
+    aliases: [hub]
