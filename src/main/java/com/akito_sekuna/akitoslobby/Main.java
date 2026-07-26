@@ -1,4 +1,4 @@
-package com.akito_sekuna.lobby;
+package com.akito_sekuna.akitoslobby;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
