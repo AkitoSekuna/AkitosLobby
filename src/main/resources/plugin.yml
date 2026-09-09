@@ -1,9 +1,9 @@
 name: AkitosLobby
-version: 21.2.3
-main: com.akito_sekuna.akitoslobby.Main
+version: 21.2.7
+main: com.akito_sekuna.lobby.Main
 api-version: '1.21'
 depend: [AkitosCore]
-softdepend: [Headsmith]
+softdepend: [Multiverse-Core, Multiverse-Inventories]
 author: akito_sekuna
 description: Lobby teleportation and treasure head addon for AkitosCore.
 commands:
@@ -11,9 +11,12 @@ commands:
     description: Teleport to the main lobby spawn.
     permission: akitoslobby.use
     permission-message: "<red>You do not have permission to use this command."
-    aliases: [hub]
+  hub:
+    description: Open the destination menu, works even without holding the compass.
+    permission: akitoslobby.use
+    permission-message: "<red>You do not have permission to use this command."
   treasurehead:
-    description: Place a clickable treasure head at your feet.
-    usage: /treasurehead [normal|big|mega]
+    description: Place a clickable treasure head at your feet, or manage rarities.
+    usage: /treasurehead [rarity|create <rarity> <min> <max> <url>|remove <rarity>|list]
     permission: akitoslobby.admin
     permission-message: "<red>You do not have permission to use this command."

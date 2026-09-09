@@ -1,18 +1,39 @@
 # AkitosLobby Configuration
 lobby-world: "world"
 
+worldcentral:
+  lobby:
+    trigger-world: "world"
+    display-name: "&bServer Selector"
+    lore:
+      - "&7Right-click to choose a destination"
+    menu-title: "&1Where to?"
+    destinations:
+      lobby:
+        display-name: "&6Lobby"
+        material: GOLD_BLOCK
+        lore:
+          - "&7Teleport back to the lobby"
+        world: "world"
+      survival:
+        display-name: "&aSurvival"
+        material: GRASS_BLOCK
+        lore:
+          - "&7Teleport to the survival world"
+        world: "world"
+
 treasure-head:
   cooldown-days: 30
   rarities:
     normal:
       min-reward: 5
       max-reward: 8
-      headsmith-name: "mini copper block"
+      texture-url: "PUT-MINECRAFT-HEADS-URL-HERE" # Look up a head on minecraft-heads.com and paste its "Minecraft-URL" field here (not the base64 "Value" field)
     big:
       min-reward: 8
       max-reward: 15
-      headsmith-name: "mini gold block"
+      texture-url: "PUT-MINECRAFT-HEADS-URL-HERE"
     mega:
       min-reward: 15
       max-reward: 20
-      headsmith-name: "mini emerald block"
+      texture-url: "PUT-MINECRAFT-HEADS-URL-HERE"

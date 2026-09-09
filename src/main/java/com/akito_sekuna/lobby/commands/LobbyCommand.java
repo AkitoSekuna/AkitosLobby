@@ -1,8 +1,9 @@
 package com.akito_sekuna.lobby.commands;
 
 import com.akito_sekuna.lobby.Main;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -21,24 +22,24 @@ public class LobbyCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage(ChatColor.RED + "[Akitos] Only players can execute this command.");
+            sender.sendMessage(Component.text("[Akitos] Only players can execute this command.").color(NamedTextColor.RED));
             return true;
         }
 
-        String lobbyWorldName = plugin.getConfig().getString("lobby-world", "world");
+        String lobbyWorldName = plugin.getConfigManager().getLobbyWorldName();
         World lobbyWorld = Bukkit.getWorld(lobbyWorldName);
 
         if (lobbyWorld == null) {
-            player.sendMessage(ChatColor.RED + "[Akitos] Error: Lobby world '" + lobbyWorldName + "' is not loaded!");
+            player.sendMessage(Component.text("[Akitos] Error: Lobby world '" + lobbyWorldName + "' is not loaded!").color(NamedTextColor.RED));
             return true;
         }
 
         Location lobbySpawn = lobbyWorld.getSpawnLocation();
         player.teleportAsync(lobbySpawn).thenAccept(success -> {
             if (success) {
-                player.sendMessage(ChatColor.GREEN + "[Akitos] Teleported to the lobby!");
+                player.sendMessage(Component.text("[Akitos] Teleported to the lobby!").color(NamedTextColor.GREEN));
             } else {
-                player.sendMessage(ChatColor.RED + "[Akitos] Teleportation failed.");
+                player.sendMessage(Component.text("[Akitos] Teleportation failed.").color(NamedTextColor.RED));
             }
         });
 
