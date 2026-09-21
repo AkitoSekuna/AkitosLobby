@@ -1,5 +1,5 @@
 name: AkitosLobby
-version: 21.2.7
+version: 21.2.8
 main: com.akito_sekuna.lobby.Main
 api-version: '1.21'
 depend: [AkitosCore]

@@ -18,7 +18,6 @@ import com.akito_sekuna.core.api.ICoreAPI;
 import com.akito_sekuna.core.ReloadReason;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -58,8 +57,12 @@ public final class Main extends JavaPlugin implements AkitosAddon {
     public void onCoreReady(ICoreAPI api) {
         this.coreAPI = api;
         api.getMetrics().registerBarChart("treasure_rarities_claimed", treasureClaimTracker::getAndReset);
-        // Example using Bukkit's standard registry if ICoreAPI delegates to it:
-        Bukkit.getServicesManager().register(ITreasureCooldownService.class, treasureManager, this, ServicePriority.Normal);
+        // Lambda, not a direct treasureManager reference: onCoreReady() fires during
+        // registerAddon(this) in step 2 of onEnable(), before treasureManager is
+        // constructed in step 4. A lambda reads the field fresh at call time (when
+        // the service is actually invoked, long after onEnable() completes), a
+        // method reference or direct object would have captured null instead.
+        api.getServiceRegistry().register(ITreasureCooldownService.class, uuid -> treasureManager.resetAllCooldowns(uuid));
         getLogger().info("[AkitosLobby] Successfully hooked into AkitosCore API!");
     }
 
@@ -72,7 +75,9 @@ public final class Main extends JavaPlugin implements AkitosAddon {
 
     @Override
     public void onCoreShutdown() {
-        // Cleanup resources on core shutdown if necessary
+        if (coreAPI != null) {
+            coreAPI.getServiceRegistry().unregister(ITreasureCooldownService.class);
+        }
     }
 
     // --- Custom Config Loader ---
